@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //for loop
+        for (let i = 10; i>=0; i--) {
+            console.log("for loop",i);
+            i--;
+        }
+
+        //While loop
+        let i=10;
+        while(i<=15){
+            console.log("while loop",i);
+            i++;
+        }
+
+        //do-while loop
+        let count=0;
+        do {
+            console.log( "do-while loop" ,count);
+            count++;
+        } while (count<= 5);
+
+
+        //for in loop
+        let person = { fname: "John", lname: "Doe", age: 25 };
+        for (let key in person) {
+            console.log("for-in loop", key + ": " + person[key]);
+        }
+
+
+        //for of loop
+        let fruits = ["apple", "banana", "cherry"];
+        for (let fruit of fruits) {
+            console.log("for-of loop", fruit);
+        }
+
+        //for each loop
+        let colors = ["red", "green", "blue"];
+        colors.forEach(function(color, index) {
+            console.log("forEach loop", index + ": " + color);
+        });
+        
+
+        //modulo operator
+        let number=100;
+        while (number > 0) {
+            let rem = number % 10;
+            console.log( "Remaider",rem);
+            number = Math.floor(number / 10);
+        }
+        
+
+        //random values
+        for (let i = 0; i < 1; i++) {
+            let randomVal = Math.floor(Math.random()*100);
+            console.log("Random Value " + (i + 1) + ": " + randomVal);
+        }
+        
+        //rounding function
+        let num = 45.67;
+        console.log("Original Value: " + num);
+        console.log("Math.round: " + Math.round(num));
+        
+        
+    </script>
+</body>
+</html>

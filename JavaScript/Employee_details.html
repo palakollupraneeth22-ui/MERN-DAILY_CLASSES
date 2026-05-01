@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tbody tr:nth-child(odd) {
+            background-color: rgb(139, 162, 162);
+        }
+        tbody tr:nth-child(even) {
+            background-color: rgb(111, 164, 146);
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Emp Details</h1>
+    <input type="search" placeholder="search here"><br><br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead bgcolor="skyblue">
+            <tr>
+                <th>name</th>
+                <th>role</th>
+                <th>salary</th>
+                <th>address</th>
+                <th>phone no</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>ravi</th>
+                <th>developer</th>
+                <th>616564</th>
+                <th>guntur</th>
+                <th>9848547685</th>
+            </tr>
+            <tr>
+                <th>ram</th>
+                <th>analyst</th>
+                <th>516464</th>
+                <th>vizag</th>
+                <th>6305245784</th>
+            </tr>
+            <tr>
+                <th>raju</th>
+                <th>designer</th>
+                <th>5616131</th>
+                <th>vijayawada</th>
+                <th>7025489542</th>
+            </tr>
+            <tr>
+                <th>raju</th>
+                <th>designer</th>
+                <th>5616131</th>
+                <th>vijayawada</th>
+                <th>7025489542</th>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    <p>
+       Software testing is a critical process in the Software Development Life Cycle (SDLC), aimed at verifying and validating that a software application meets its requirements and is free of defects. It ensures that the software functions as expected and satisfies user needs efficiently.
+    </p>
+    <button onclick="disappearParagraph()"> click here</button>
+    <script>
+        function disappearParagraph() {
+            let para = document.querySelector("p");
+            para.style.display = (para.style.display == "block") ? "none" : "block"
+        }
+        let rows = document.querySelectorAll("tbody tr");
+        let input = document.querySelector("input");
+        input.addEventListener('keyup', () => {
+            let inputText = input.value.toLowerCase();
+            rows.forEach((row) => {
+                let rowData = row.textContent;
+
+                let result = rowData.toLowerCase().includes(inputText);
+                console.log(result);
+
+                row.style.display = result ? "" : "none"
+            })
+
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
