@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1::after {
+        content: " Class";
+        color:rgb(18, 166, 196);
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: 0 auto; 
+    }
+    #name, #email, #password {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid rgb(182, 24, 174);
+        border-radius: 5px;
+    }
+        button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            color: white;
+            background-color: green;
+        }
+        button[type="reset"] {
+            color: white;
+            background-color: red;
+        }
+        fieldset {
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 80%;
+        }
+        form {
+            background-color: rgb(240, 240, 240);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2::first-letter {
+            color: rgb(255, 0, 0);
+            font-size: 500%;
+        }
+        p::first-line {
+            color: rgb(0, 128, 0);
+            font-size: 150%;
+        }
+        p{
+            color: rgb(0, 0, 255);
+            font-size: 120%;
+        }
+        p::first-letter {
+            color: rgb(19, 209, 238);
+            font-size: 200%;
+        }
+        ol {
+            list-style-type: none;
+        }
+        li:nth-child(1)::marker {
+            content:"➡️";
+    } 
+        li:nth-child(2)::marker {
+            content:"➡️";
+        }
+        li:nth-child(3)::marker {
+            content:"➡️";
+        }
+       div::selection {
+            background-color: rgb(25, 117, 136);
+        }
+        ::placeholder {
+            color: rgb(255, 0, 0);
+            font-size: 120%;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        label{
+            color: rgb(0, 0, 255);
+            font-size: 120%;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+            }
+</style>
+<body>
+    <h1 align="center">🏷️Welcome to day-6</h1>
+    <h2 align="center">Registration Form</h2>
+    <form action="">
+        <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </fieldset>
+        
+    </form>
+    <ol>
+        <li>HTML stands for HyperText Markup Language.</li>
+        <li>CSS stands for Cascading Style Sheets.</li>
+        <li>JavaScript is a programming language used to create interactive effects within web browsers.</li>
+    </ol>
+   <p>
+        This is a registration form created using HTML and styled with CSS.<br> The form includes fields for the user's name, email, and password, along with submit and reset buttons.<br> The CSS styles the form elements to enhance their appearance and usability. <br>The heading "Welcome to day-6" is styled with a pseudo-element to add the word "Class" after it, and the second heading has its first letter styled differently for emphasis.   
+   </p>
+   <br><br>
+    <div>
+        The ordered list is styled to remove the default numbering and replace it with custom markers (arrows) for each list item. <br> The input fields change their background color and border when focused, providing visual feedback to the user. <br> Additionally, the link changes its appearance when hovered over, enhancing the user experience. Overall, this code demonstrates the use of various CSS pseudo-classes and pseudo-elements to create a visually appealing and interactive web page.
+          </div>
+</body>
+</html>

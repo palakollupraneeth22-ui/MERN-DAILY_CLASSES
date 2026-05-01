@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userDetails = function (username, password) {
+            console.log("This is functional expression");
+            return username + " " + password
+        }
+        
+        let result = userDetails('ravi@123', "admin@123");
+        console.log(userDetails("ramu", "ramu@123"));
+        console.log(result);
+        userDetails()
+
+        //normal function
+
+        function employeeDetails(name,role,salary,address) {
+            // console.log("This is Normal Function..");
+            // console.log("name:",name);
+            // console.log("role:",role);
+            ///console.log("salary:",salary);
+            // console.log("address:",address);
+            return[name,role,salary,address]
+        }
+       
+        let emp1= employeeDetails("teja","developer",900000,"america");
+       console.log(emp1);
+
+       //immediate invoking function
+        (function(){
+            let apiKey="AIzaSyApeYoB_YEn3e9IQjGjo4w6Acsr7Qw4IwQ";
+            console.log("This is immediate invoking function");
+            console.log("API Key:",apiKey);
+        })()
+
+        //arrow function         
+        
+        let arrowfun=()=>console.log("Arrow function")
+        arrowfun();
+
+        let test=(skill,name)=>{
+            let a=10;
+            let b=20;
+            console.log(a,b);
+            console.log("Name:",name,"Skill:",skill);
+        }
+        test(["nodejs","reactjs","expressjs","mongodb"],"teja");
+
+        //nested function
+
+        function outerFunction() {
+            function innerFunction() {
+                console.log("This is inner function");
+            }
+            console.log("This is outer function");
+            innerFunction();
+        }
+        outerFunction();
+
+    </script>
+</body>
+</html>

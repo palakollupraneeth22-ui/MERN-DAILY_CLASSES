@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        </fieldset>
+    </form>
+    <script>
+        let user = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log("Username:", user);
+            console.log("Password:", pass);
+
+            //local storage.set item is used to store data in local storage-in a key format,
+            //this local storage is permanaent storage because data is not delete even browser closed.
+
+
+            window.localStorage.setItem("username", username.value);
+            window.localStorage.setItem("password", password.value);
+
+            let storedname = localStorage.getItem("username");
+            let storedpass = localStorage.getItem("password");
+            console.log("Stored Username:", storedname);
+            console.log("Stored Password:", storedpass);
+            window.open("table.html", "_blank");
+            form.reset()
+        });
+    </script>
+</body>
+</html>

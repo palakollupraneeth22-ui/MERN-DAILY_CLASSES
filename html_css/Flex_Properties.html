@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: #0a0a0c;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Neon Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #39a59c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #39a59c;
+        }
+
+        /* Brand Selection Color */
+        ::selection {
+            background: #39a59c;
+            color: #fff;
+        }
+
+        nav {
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 2;
+        }
+
+        ol {
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        li {
+            font-weight: bold;
+            font-style: italic;
+            text-shadow: 2px 2px 2px black;
+            color: #fff;
+            background-color: transparent;
+            padding: 10px 20px;
+            border-radius: 8px;
+            flex-grow: 1;
+            margin: 5px 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        li:hover {
+            color: #39a59c;
+            transform: translateY(-3px);
+        }
+
+        li::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 5px;
+            left: 50%;
+            background-color: #39a59c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        li:hover::after {
+            width: 60%;
+        }
+
+        video {
+            width: 100vw;
+            height: 500px;
+        }
+
+        #electronic-devices {
+            padding-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            margin-top: -100px;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            perspective: 1000px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #electronic-devices-section {
+            position: relative;
+            bottom: 0px;
+            left: 40px;
+            z-index: 1;
+            font-size: 40px;
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #electronic-devices-section:hover {
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px aliceblue;
+            color: rgb(150, 53, 53);
+            cursor: pointer;
+            transform: scaleY(1.5);
+        }
+
+        #electronic-devices>div {
+            height: 450px;
+            width: 350px;
+            border: 5px solid rgb(122, 195, 231);
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(79, 79, 134, 0.1), rgba(50, 50, 80, 0.1)); /* Subtle gradient for glassmorphism base */
+            background-size: 200% 200%; /* For background animation */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            animation: cardEntry 0.8s ease-out both, subtleCardBackground 15s ease infinite alternate; /* Added subtle background animation */
+            position: relative; /* Ensure ::before works correctly */
+        }
+
+        @keyframes cardEntry {
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes subtleCardBackground {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        #electronic-devices > div:nth-child(1) { animation-delay: 0.1s; }
+        #electronic-devices > div:nth-child(2) { animation-delay: 0.2s; }
+        #electronic-devices > div:nth-child(3) { animation-delay: 0.3s; }
+        #electronic-devices > div:nth-child(4) { animation-delay: 0.4s; }
+        #electronic-devices > div:nth-child(5) { animation-delay: 0.5s; }
+        #electronic-devices > div:nth-child(6) { animation-delay: 0.6s; }
+
+        #electronic-devices>div:hover {
+            transform: rotateX(3deg) rotateY(3deg) translateY(-20px) scale(1.03); /* More pronounced transform */
+            border-color: #39a59c; /* Direct border color change */
+            box-shadow: 0 8px 30px rgba(57, 165, 156, 0.8); /* Stronger initial shadow */
+            animation: hoverPulse 1.5s infinite alternate; /* Pulsing box-shadow animation */
+        }
+
+        @keyframes hoverPulse {
+            0% { box-shadow: 0 8px 30px rgba(57, 165, 156, 0.8); border-color: #39a59c; }
+            50% { box-shadow: 0 12px 40px rgba(57, 165, 156, 1); border-color: #66d9ef; } /* Slightly different color for pulse peak */
+            100% { box-shadow: 0 8px 30px rgba(57, 165, 156, 0.8); border-color: #39a59c; }
+
+        }
+
+        /* Light Sweep Effect on Card Hover */
+        #electronic-devices>div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+        }
+        #electronic-devices>div:hover::before {
+            left: 125%;
+        }
+
+        h1 {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(to right, #fff 20%, #39a59c 40%, #39a59c 60%, #fff 80%);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite, floatingTitle 3s ease-in-out infinite;
+            font-size: 3rem;
+            white-space: nowrap;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        @keyframes floatingTitle {
+            0%, 100% { margin-top: 0; }
+            50% { margin-top: -20px; }
+        }
+
+        #electronic-devices img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        #electronic-devices>div:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-info h4 {
+            font-size: 18px;
+            color: #39a59c;
+        }
+
+        .product-info h4,
+        p {
+            color: aliceblue;
+            margin-left: 25px;
+            font-style: italic;
+            text-align: center;
+            margin: 5px 0;
+            padding: 0 15px;
+        }
+
+        .product-info p {
+            font-size: 12px;
+            opacity: 0;
+            max-height: 0;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        #electronic-devices>div:hover .product-info p {
+            opacity: 0.8;
+            max-height: 100px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-container button:first-child {
+            background: #39a59c;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(57, 165, 156, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(57, 165, 156, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(57, 165, 156, 0); }
+        }
+
+        .btn-container button:last-child {
+            background: transparent;
+            border: 1px solid #e70d40;
+            color: #e70d40;
+        }
+
+        .btn-container button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        aside{
+            position: fixed;
+            top:40%;
+            border: 2px solid black;
+            padding: 25px 10px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            z-index: 1;
+            left: 20px;
+            border-radius: 50px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 1s ease-out, floatAside 4s ease-in-out infinite;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @keyframes slideInLeft {
+            from { left: -100px; opacity: 0; }
+            to { left: 20px; opacity: 1; }
+        }
+
+        @keyframes floatAside {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-45%); }
+        }
+
+        aside img{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: grayscale(0.5);
+        }
+
+        aside img:hover {
+            cursor: pointer;
+            transform: scale(1.4) rotate(360deg);
+            filter: grayscale(0) brightness(1.2);
+        }
+
+        .yt:hover { filter: drop-shadow(0 0 15px #FF0000); }
+        .li:hover { filter: drop-shadow(0 0 15px #0077B5); }
+        .wa:hover { filter: drop-shadow(0 0 15px #25D366); }
+        .tw:hover { filter: drop-shadow(0 0 15px #1DA1F2); }
+        
+    </Style>
+</head>
+
+<body>
+    <nav>
+        <ol>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTENT</li>
+            <li>HELP</li>
+            <li>LOGIN</li>
+        </ol>
+    </nav>
+    <main>
+        <section id="background-video">
+
+            <video src="https://cdn.pixabay.com/video/2024/02/06/199558-910609536_medium.mp4?download" autoplay loop muted></video>
+        </section>
+        <section>
+            <h1>Welcome to Alpha Mart</h1>
+        </section>
+        <section id="electronic-devices">
+            <div>
+                <img src="https://th.bing.com/th/id/OIP.Isq0o7DMDsmYbehCJXFm9QHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" height="50%" width="100%">
+                <div class="product-info">
+                    <h4>Name:ASUS</h4>
+                    <h4>Cost:50000</h4>
+                    <h4>Ratings:4.5/5</h4>
+                    <p>
+                        ASUS India offers the latest laptops, PCs, desktops, mobiles & accessories. Perfect for work, gaming, or daily use. Explore IoT & networking solutions today!
+                    </p>
+
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://tse2.mm.bing.net/th/id/OIP.hh3zjf-s3WuvWbvovICOTwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" width="100%" height="50%">
+                <div class="product-info">
+                    <h4>Name:MAC BOOK</h4>
+                    <h4>Cost:95000</h4>
+                    <h4>Ratings:4.8/5</h4>
+                    <p>The most powerful Mac laptops and desktops ever. Supercharged by Apple silicon. MacBook Neo, MacBook Air, MacBook Pro, iMac, Mac mini and Mac Studio.</p>
+
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.nNlnTD_1eEzrS3do_QXbnwHaFJ?rs=1&pid=ImgDetMain&o=7&rm=3" height="50%" width="100%">
+                <div class="product-info">
+                    <h4>Name:DELL</h4>
+                    <h4>Cost:75000</h4>
+                    <h4>Ratings:4.2</h4>
+                    <p>Dell India’s official store locator. Here are Dell Exclusive Stores and Dell Reseller Stores. Also, look for Dell Stores near you & get automated directions. </p>
+
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.3d7lFGNF2neOOvb2xS4PbAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" height="50%" width="100%">
+                <div class="product-info">
+                    <h4>Name:ACER</h4>
+                    <h4>Cost:40000</h4>
+                    <h4>Ratings:4.0/5</h4>
+                    <p>
+                       Acer 4K Monitors with 24, 27, and 32-inch HD display, curved screens, and ergonomic designs at best prices for computer monitor. Portable external Monitors also available at Acer Store.</p>
+
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/61oAh3XrX+L._AC_SL1500_.jpg" height="50%" width="100%">
+                <div class="product-info">
+                    <h4>Name:HP</h4>
+                    <h4>Cost:60000</h4>
+                    <h4>Ratings:4.3/5</h4>
+                    <p>
+                       HP 4K Monitors with 24, 27, and 32-inch HD display, curved screens, and ergonomic designs at best prices for computer monitor. Portable external Monitors also available at HP Store.</p>
+
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div>
+                <img src="https://i5.walmartimages.com/seo/Lenovo-IdeaPad-3i-14-FHD-Laptop-Intel-Core-i5-1135G7-8GB-256GB-SSD-Windows-11-Platinum-Grey-81X700FVUS_70701446-e63a-4490-a792-f7fdd3f7df00.8ede4ef5dbddddbc3d98b5a7383c53a0.jpeg" height="50%" width="100%">
+                <div class="product-info">
+                    <h4>Name:LENOVO</h4>
+                    <h4>Cost:40000</h4>
+                    <h4>Ratings:4.1/5</h4>
+                    <p>Lenovo laptops for powerful performance & durability. Ideal for students & pros. Choose from varied RAM, screen sizes & features.</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <img src="https://img.icons8.com/fluency/48/youtube-play.png" alt="YouTube" class="yt">
+        <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" class="li">
+        <img src="https://img.icons8.com/fluency/48/whatsapp.png" alt="WhatsApp" class="wa">
+        <img src="https://img.icons8.com/fluency/48/twitter.png" alt="Twitter" class="tw">
+    </aside>
+</body>
+
+</html>

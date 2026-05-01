@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name:"Praneeth",
+            rollnumber:'123456789',
+            skills:["node js","react js","express js","mongodb"],
+            address:{
+                city:"vizag",
+                state:"Andhra pradesh",
+                country:"India"
+            }
+        }
+        console.log(obj);
+        console.log(obj.name);
+        console.log(obj.rollnumber);
+        console.log(obj.skills);
+        console.log(obj.address.city);
+        console.log(obj.address.state);
+        console.log(obj.address.country);
+
+
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj));
+
+        obj.name="MANI"
+        console.log(obj);
+        delete obj.rollnumber
+        console.log(obj);
+    </script>
+</body>
+</html>

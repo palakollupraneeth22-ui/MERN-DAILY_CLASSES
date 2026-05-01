@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let employees = [
+            { id: 101, name: "Kalyan", role: "Developer", salary: 50000, image: "https://i.pinimg.com/736x/ec/3c/61/ec3c61cb2533ba6b3335ccbffbf016be.jpg" },
+            { id: 102, name: "Pardhu", role: "Designer", salary: 45000, image: "https://tse2.mm.bing.net/th/id/OIP.omdhMBSRZAQsuf_N9YjhOgHaJQ?rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { id: 103, name: "Riya", role: "Tester", salary: 40000, image: "https://tse2.mm.bing.net/th/id/OIP.vS9yaxbaVKU-yhErWtZ8TQHaEo?rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { id: 104, name: "Teju", role: "manager", salary: 80000, image: "https://th.bing.com/th/id/OIP.xTVo5erkb2f-vIKGc5y40gHaEK?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3q aq      " }
+        ];
+
+        console.table(employees);
+
+        document.write("<table border='1' cellspacing='0' cellpadding='10'>");
+        document.write("<tr><th>Photo</th><th>ID</th><th>Name</th><th>Role</th><th>Salary</th></tr>");
+        
+        employees.map((emp) => {
+            document.write(`
+                <tr>
+                    <td><img src="${emp.image}" alt="${emp.name}'s Photo" style="border-radius: 5px; height: 50px; width: 50px;"></td>
+                    <td>${emp.id}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.role}</td>
+                    <td>${emp.salary}</td>
+                </tr>
+            `);
+        });
+
+        document.write("</table>");
+        
+
+    </script>
+</body>
+</html>

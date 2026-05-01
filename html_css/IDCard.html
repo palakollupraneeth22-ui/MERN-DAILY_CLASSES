@@ -1,0 +1,158 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #0f1010;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    .id-card {
+        width: 350px;
+        background: rgb(245, 243, 243);
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        overflow: hidden;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+    .header {
+        background-color: #f6f7f9;
+        color: white;
+        padding: 15px;
+    }
+    .header img {
+        background: rgb(247, 246, 246);
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    .header p {
+        font-size: 11px;
+        margin: 5px 0;
+        font-weight: bold;
+    }
+    .header span {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+    .student-photo {
+        width: 150px;
+        height: 150px;
+        border: 3px solid #f0f1f2;
+        border-radius: 8px;
+        margin: 20px auto 10px;
+        object-fit: cover;
+    }
+    h2 {
+        color: #003366;
+        font-size: 16px;
+        margin: 10px 0;
+
+    }
+    .details-table {
+        width: 90%;
+        margin: 15px auto 25px;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+    .details-table td {
+        padding: 6px;
+        text-align: left;
+    }
+    .label {
+        font-weight: bold;
+        color: #121212;
+        width: 40%;
+    }
+    .value {
+        color: #000;
+    }
+    .footer {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 0 25px 15px 0;
+        box-sizing: border-box;
+    }
+    .signature {
+        text-align: center;
+    }
+    .signature img {
+        width: 70px;
+        display: block;
+        margin: 0 auto -5px;
+    }
+    span {
+        display: block;
+        margin-top: 5px;
+        font-size: 10px;
+        color: #0f0f0f;
+        text-align: center;
+        font-weight: bold;
+    }
+    p{
+        font-size: 10px;
+        color: #0f0f0f;
+        text-align: center;
+        font-weight: bold;
+    }
+    footer img {
+        width: 70px;
+        display: block;
+        margin: 0 auto -5px;
+    }
+    .side-text {
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        position:absolute;
+    }
+</style>
+<body>
+        <div class="id-card">
+        <div class="header">
+            <img src="https://resources.saylor.org/wwwresources/wp-content/uploads/20200717101134/BITS-VIzag-logo.jpg" width="300" alt="BITS Vizag Logo">
+            <p>Approved by AICTE, New Delhi & Affiliated to JNTUGV</p>
+            <span>
+                Accredited by NAAC with 'A' Grade | ISO 9001:2015 Certified<br>
+                An Autonomous Institution
+            </span>
+        </div>
+        <img src="https://tse2.mm.bing.net/th/id/OIP.Jehu-amLZtbxEW-Gcw0KGQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" class="student-photo" alt="Student Photo">
+       <div class="side-text">
+            COLLEGE CODE: BABA
+        </div>
+
+        <table class="details-table">
+            <tr>
+                <td class="label">NAME:</td>
+                <td class="value">Praneeth</td>
+            </tr>
+            <tr>
+                <td class="label">COURSE:</td>
+                <td class="value">B.Tech</td>
+            </tr>
+            <tr>
+                <td class="label">BRANCH:</td>
+                <td class="value">CSE</td>
+            </tr>
+            <tr>
+                <td class="label">REGD NO:</td>
+                <td class="value">20BCS123</td>
+            </tr>
+        </table>
+        <div class="footer">
+            <div class="signature">
+                <img src="./image.png" alt="Principal Signature" >
+                <p style="margin: 0; border-top: 1px solid #333; padding-top: 2px;">Principal</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
